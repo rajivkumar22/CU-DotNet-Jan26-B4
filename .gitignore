@@ -1,0 +1,66 @@
+# Visual Studio / .NET
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+publish/
+
+# Visual Studio cache/options
+*.VC.db
+*.VC.VC.opendb
+
+# Rider
+.idea/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Node
+node_modules/
+
+# ASP.NET temporary files
+wwwroot/lib/
+
+# Logs
+*.log
+
+# Publish output
+*.Publish.xml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# User secrets and sensitive files
+secrets.json
+appsettings.*.local.json
+
+# VS Code
+.vscode/
+
+# Dotnet file-based locks
+project.lock.json
+project.fragment.lock.json
+
+# Coverage and test results
+coverage/
+TestResults/
+*.coverage
+*.coveragexml
+
+# Others
+*.db
+
+# End of file
