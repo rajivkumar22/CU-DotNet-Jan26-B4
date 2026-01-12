@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Week2/">
+    <Project Path="frameworkConsoleApp/frameworkConsoleApp.csproj" Id="2b93daac-83d2-4cea-952d-e2c237e6e36f" />
+    <Project Path="libraryproject/libraryproject.csproj" />
+    <Project Path="MyClassLibrary/MyClassLibrary.csproj" />
+    <Project Path="WebApiDemo/WebApiDemo.csproj" Id="7f997298-258a-41cf-b95e-205224666f39" />
+  </Folder>
+</Solution>
