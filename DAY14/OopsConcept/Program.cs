@@ -49,9 +49,9 @@ namespace OopsConcept
         {
             this.id = id;
         }
-        public void getName()
+        public void getId()
         {
-            Console.WriteLine(id);
+            Console.WriteLine($"The Employee ID is:  {id}");
         }
         public string name { get; set; }
 
@@ -79,6 +79,7 @@ namespace OopsConcept
                 }
             }
         }
+    }
 
         class Program
         {
@@ -96,18 +97,20 @@ namespace OopsConcept
                 //Console.WriteLine(p1.Mobile);
                 Employee emp = new Employee();
                 emp.setId(44);
-                emp.getName();
+                emp.getId();
                 emp.name = "Rajiv";
                 emp.Departments = "IT";
-                emp.salary = 400000;
+             
+                emp.Salary = 600000;
                 Console.WriteLine($" Name of Employee is:{emp.name}");
                 Console.WriteLine($"department name is:{emp.Departments}");
-                Console.WriteLine($"Employee salary is:{emp.salary}");
+                Console.WriteLine($"Employee salary is:{emp.Salary}");
+               
 
 
 
 
-            }
+        }
         }
     }
-}
+
