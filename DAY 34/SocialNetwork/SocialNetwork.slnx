@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="OrganisationChart/OrganisationChart.csproj" Id="c08cc639-d90b-4fa3-bf5e-d8d391ac40aa" />
+  <Project Path="SocialNetwork/SocialNetwork.csproj" />
+</Solution>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DelegatesDemo/DelegatesDemo.csproj" Id="d33c367b-68c5-4e14-b824-625f63de4b06" />
+  <Project Path="ExpenseCalculator/ExpenseCalculator.csproj" />
+  <Project Path="ThreadDemo/ThreadDemo.csproj" Id="5f2f8195-4e9a-4a23-a46e-5a624159873f" />
+</Solution>
