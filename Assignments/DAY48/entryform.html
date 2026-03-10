@@ -1,0 +1,126 @@
+<!--Create a Web Entry Form for any Entity 
+of your choice to gather information.
+Use all types of inputs and their attributes.
+Use Table to align Labels and controls.
+
+
+1.Customer KYC
+2.Loan
+3.Bank Account Opening
+4.Passport Application
+5.Driving License
+6.College Admission -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Admission Form</title>
+</head>
+<body>
+       <form>
+         <h1>College Admission Form</h1>
+         
+    <table border="1">
+
+        
+       <tr>
+        <td>
+            <label> Enter your name:</label>
+             
+        </td>
+        <td>
+            <input type="text" name="name" id="name"
+             pattern="[A-Z][a-z]+(\s[A-Z][a-z]+)*"
+             title="enter a valid name"
+            required>
+        </td>
+       
+       </tr>
+       <tr>
+        <td>
+            <label>Enter Gender:</label>
+        </td>
+        <td>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male" >Male</label>
+            <input type="radio" id="female" name="gender" value="female" >
+            <label for="female">Female</label>
+        </td>
+       </tr>
+       <tr>
+        <td>
+            <label> Enter your email:</label>
+             
+        </td>
+        <td>
+            <input type="email" name="email" id="email"
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+             title="enter a valid email"
+            required>
+        </td>
+       </tr>
+        <tr>
+        <td>
+            <label> Enter your age:</label>
+             
+        </td>
+        <td>
+            <input type="number" name="age" id="age"
+             min="18" max="100"
+             title="enter a valid age"
+            required>
+        </td>
+       </tr>
+       <tr>
+        <td>
+            <label>Enter Phone Number:</label>
+        </td>
+        <td>
+            <input type="tel" name="phone" id="phone"
+            pattern="[0-9]{10}"
+            title="enter a valid 10-digit phone number"
+            required>
+        </td>
+       </tr>
+       <tr>
+        <td>
+            <label>Enter DOB</label>
+
+        </td>
+        <td>
+            <input type="date" name="dob" id="dob" required>
+            
+        </td>
+       </tr>
+       <tr>
+      <td>
+         <label>Select State:</label>
+      </td>
+      <td>
+        <select name="state" id="state" required>
+            <option value= ""disabled selected hidden>select state</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Delhi">Delhi</option>
+            <option value="UP">UP</option>
+            <option value="MP">MP</option>
+            <option value ="Mumbai">Mumbai</option>
+            <option value ="Others">Others</option>
+        </select>
+      </td>
+       </tr>
+
+       <tr>
+        <td>
+           <input type="submit" value="submit">
+           <input type="reset" value="reset">
+            
+        </td>
+       </tr>
+    </table>
+      </form>
+    
+</body>
+</html>
