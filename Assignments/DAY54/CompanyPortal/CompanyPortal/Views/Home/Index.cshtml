@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-4">
+
+    <!-- Hero Section -->
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <h1 class="display-4">Welcome to Company Portal</h1>
+        <p class="lead">We provide innovative solutions for businesses.</p>
+        <button class="btn btn-primary">Learn More</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Consulting</h5>
+                    <p class="card-text">Professional business consulting services.</p>
+                    <a href="#" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Training</h5>
+                    <p class="card-text">Technical training programs.</p>
+                    <a href="#" class="btn btn-success">Explore</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Toast Button -->
+    <div class="mt-4">
+        <button type="button" class="btn btn-warning" onclick="showToast()">
+            Show Live Toast
+        </button>
+    </div>
+
+</div>
+
+<!-- Toast -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index:11">
+    <div id="liveToast" class="toast">
+        <div class="toast-header">
+            <strong class="me-auto">Company Portal</strong>
+            <small>Now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            Welcome to Company Portal!
+        </div>
+    </div>
+</div>
+
+<script>
+    function showToast() {
+        var toastElement = document.getElementById('liveToast');
+
+        var toast = new bootstrap.Toast(toastElement, {
+            delay: 3000   
+        });
+
+        toast.show();
+    }
+</script>
