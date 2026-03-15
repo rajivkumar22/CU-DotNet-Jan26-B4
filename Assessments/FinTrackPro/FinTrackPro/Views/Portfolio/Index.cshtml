@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Portfolio Assets</h1>
+
+@{
+    double total = (double)ViewData["Total"];
+    double newValue = total + 500;
+}
+
+<h2>Total Portfolio Value: @total</h2>
+<h2>Total After Bonus: @newValue</h2>

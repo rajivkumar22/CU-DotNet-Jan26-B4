@@ -1,0 +1,85 @@
+﻿@model IEnumerable<FinTrackPro.Models.Account>
+
+@{
+    ViewData["Title"] = "Accounts";
+}
+
+<h1>Accounts</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Account</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Balance</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                    <a asp-controller="Transactions"
+                       asp-action="Create"
+                       asp-route-accountId="@item.Id"
+                       class="text-success">
+                        Add Transaction
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+
+                    <b>Transactions</b>
+
+                    <table class="table table-sm table-bordered mt-2">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @if (item.Transactions != null && item.Transactions.Any())
+                            {
+                                foreach (var t in item.Transactions)
+                                {
+                                    <tr>
+                                        <td>@t.Date.ToShortDateString()</td>
+                                        <td>@t.Description</td>
+                                        <td>@t.Category</td>
+                                        <td>@t.Amount</td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4">No transactions</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
