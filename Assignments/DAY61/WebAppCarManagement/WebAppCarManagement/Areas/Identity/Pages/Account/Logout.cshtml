@@ -1,0 +1,83 @@
+﻿@page
+@model LogoutModel
+
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        height: 100vh;
+    }
+
+    .logout-container {
+        height: 100vh;
+    }
+
+    .logout-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-radius: 15px;
+        padding: 40px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .btn-logout {
+        background-color: #ff4b2b;
+        border: none;
+        padding: 10px 20px;
+    }
+
+        .btn-logout:hover {
+            background-color: #ff1e00;
+        }
+
+    .btn-home {
+        background-color: #28a745;
+        border: none;
+        padding: 10px 20px;
+    }
+
+        .btn-home:hover {
+            background-color: #1e7e34;
+        }
+</style>
+
+<div class="container logout-container d-flex justify-content-center align-items-center">
+    <div class="col-md-4">
+        <div class="logout-card">
+
+            <!-- ICON -->
+            <h1>👋</h1>
+
+            <!-- TITLE -->
+            <h2>Logout</h2>
+
+            @if (User.Identity?.IsAuthenticated ?? false)
+            {
+                <p class="mb-4">Are you sure you want to logout?</p>
+
+                <form asp-area="Identity" asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Page("/", new { area = "" })"
+                      method="post">
+
+                    <button type="submit" class="btn btn-logout w-100 mb-3">
+                        Yes, Logout
+                    </button>
+                </form>
+            }
+            else
+            {
+                <p class="mb-4">You have successfully logged out 🎉</p>
+
+                <a href="/" class="btn btn-home w-100">
+                    Go to Home
+                </a>
+            }
+
+        </div>
+    </div>
+</div>
