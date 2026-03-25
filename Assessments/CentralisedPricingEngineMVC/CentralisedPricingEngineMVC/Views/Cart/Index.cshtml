@@ -1,0 +1,90 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Shopping Cart</h1>
+<h3>Available Offers:</h3>
+<ul>
+    <li><b>WINTER25</b> → 15% OFF</li>
+    <li><b>FREESHIP</b> → $5 OFF</li>
+</ul>
+
+<form method="get">
+    <label>Enter Promo Code</label>
+    <input type="text" name="promocode"  />
+    <button input type="submit">Apply</button>
+</form>
+<br/>
+@if (ViewBag.Applied == true)
+{
+    <p style="color:green;">Promo Code Applied!</p>
+    <p><b>Original Total:</b> @ViewBag.CartTotal</p>
+    <p><b>Final Total:</b> @ViewBag.FinalTotal</p>
+}
+
+ *@
+<div class="container mt-5">
+
+    <!-- Title -->
+    <h2 class="text-center mb-4">🛒 Shopping Cart</h2>
+
+    <!-- Offers Card -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title">🎁 Available Offers</h5>
+            <ul class="mb-0">
+                <li><b>WINTER25</b> → 15% OFF</li>
+                <li><b>FREESHIP</b> → $5 OFF</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Promo Form -->
+    <form method="get" class="row g-3 mb-4">
+        <div class="col-auto">
+            <input type="text" class="form-control" name="promocode" placeholder="Enter Promo Code" />
+        </div>
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Apply</button>
+            <a href="@Url.Action("Index", "Cart")" class="btn btn-secondary">Reset</a>
+        </div>
+    </form>
+
+    <!-- Alerts -->
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    @if (ViewBag.Applied == true)
+    {
+        <div class="alert alert-success">✅ Promo Code Applied!</div>
+    }
+
+    <!-- Cart Summary -->
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+
+            <h5>Cart Summary</h5>
+
+            <p class="fs-5">
+                <b>Original Total:</b> ₹@ViewBag.CartTotal
+            </p>
+
+            @if (ViewBag.Applied == true)
+            {
+                <p class="fs-4 text-success fw-bold">
+                    Final Total: ₹@ViewBag.FinalTotal
+                </p>
+            }
+            else
+            {
+                <p class="text-muted">No promo applied (0 discount)</p>
+            }
+
+        </div>
+    </div>
+
+</div>
