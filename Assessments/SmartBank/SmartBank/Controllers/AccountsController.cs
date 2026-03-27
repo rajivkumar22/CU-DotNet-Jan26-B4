@@ -1,0 +1,61 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using SmartBank.Data;
+using SmartBank.DTO;
+using SmartBank.Models;
+using SmartBank.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SmartBank.Controllers
+{
+    [ApiController]
+    [Route("accounts")]
+    [Authorize]
+    public class AccountController : ControllerBase
+    {
+        private readonly IAccountService _service;
+
+        public AccountController(IAccountService service)
+        {
+            _service = service;
+        }
+
+        [HttpPost]
+        public IActionResult Create(CreateAccountDto dto)
+        {
+            var result = _service.CreateAccount(dto);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(_service.GetAll());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            return Ok(_service.GetById(id));
+        }
+
+        [HttpPost("deposit")]
+        public IActionResult Deposit(TransactionDto dto)
+        {
+            _service.Deposit(dto);
+            return Ok("Deposit successful");
+        }
+
+        [HttpPost("withdraw")]
+        public IActionResult Withdraw(TransactionDto dto)
+        {
+            _service.Withdraw(dto);
+            return Ok("Withdrawal successful");
+        }
+    }
+}
