@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "Rajiv Kumar",
+    "Grade": 99
+  },
+  {
+    "Id": 2,
+    "Name": "HR",
+    "Grade": 99
+  },
+  {
+    "Id": 0,
+    "Name": "Rajiv",
+    "Grade": 90
+  },
+  {
+    "Id": 101,
+    "Name": "Rk",
+    "Grade": 90
+  }
+]

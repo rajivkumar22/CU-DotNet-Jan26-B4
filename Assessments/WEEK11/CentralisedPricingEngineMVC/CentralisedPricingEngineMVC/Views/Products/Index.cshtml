@@ -1,0 +1,93 @@
+﻿<div class="container mt-5">
+    <h2 class="text-center mb-4">🛍️ Product Store</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">✅ @TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">❌ @TempData["Error"]</div>
+    }
+
+    <!-- Add Product Section -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h5 class="mb-0">➕ Add New Product</h5>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="AddProduct" class="row g-3">
+                <div class="col-md-5">
+                    <input type="text" class="form-control" name="name" placeholder="Product Name" required />
+                </div>
+                <div class="col-md-4">
+                    <input type="number" step="0.01" class="form-control" name="price" placeholder="Price (₹)" required />
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success w-100">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Promo Code Section -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title">🎁 Available Offers</h5>
+            <ul class="mb-3">
+                <li><span class="badge bg-success">WINTER25</span> → 15% OFF</li>
+                <li><span class="badge bg-info">FREESHIP</span> → $5 OFF</li>
+            </ul>
+            <form method="get" class="row g-3">
+                <div class="col-auto">
+                    <input type="text" class="form-control" name="promocode" placeholder="Enter Promo Code" value="@ViewBag.PromoCode" />
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Apply Promo</button>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">Clear</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">❌ @ViewBag.Error</div>
+    }
+    @if (ViewBag.IsApplied)
+    {
+        <div class="alert alert-success">✅ Promo Code '@ViewBag.PromoCode' Applied!</div>
+    }
+
+    <!-- Products List -->
+    <div class="row">
+        @foreach (var item in ViewBag.Products)
+        {
+            <div class="col-md-6 mb-3">
+                <div class="product-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1">@item.Name</h5>
+                            <p class="mb-1">
+                                <span class="price-tag">₹@item.OriginalPrice</span>
+                            </p>
+                            @if (ViewBag.IsApplied && item.DiscountedPrice > 0)
+                            {
+                                <p class="mb-0">
+                                    <span class="text-success fw-bold fs-5">₹@item.DiscountedPrice</span>
+                                    <span class="badge bg-success ms-2">@((int)(((item.OriginalPrice - item.DiscountedPrice) / item.OriginalPrice) * 100))% OFF</span>
+                                </p>
+                            }
+                        </div>
+                        <div>
+                            <form method="post" asp-action="AddToCart">
+                                <input type="hidden" name="productId" value="@item.Id" />
+                                <button type="submit" class="btn btn-primary">🛒 Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
