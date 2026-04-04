@@ -50,6 +50,11 @@ namespace SmartBank.AccountService.Services
             return await _repo.GetAllAccountsAsync();
         }
 
+        public async Task<List<Account>> GetAccountsByUserId(string userId)
+        {
+            return await _repo.GetAccountsByUserIdAsync(userId);
+        }
+
         //public async Task Deposit(int accountId, decimal amount)
         //{
         //    var account = await _repo.GetByIdAsync(accountId);
@@ -95,7 +100,9 @@ namespace SmartBank.AccountService.Services
                     AccountId = accountId,
                     Amount = amount,
                     Type = "Deposit",
-                    Description = "Deposit via AccountService"
+                    Description = "Deposit via AccountService",
+                    UserId = account.UserId,
+                    AccountNumber = account.AccountNumber
                 }, token);
             }
             catch (Exception ex)
@@ -159,7 +166,9 @@ namespace SmartBank.AccountService.Services
                     AccountId = accountId,
                     Amount = amount,
                     Type = "Withdraw",
-                    Description = "Withdraw via AccountService"
+                    Description = "Withdraw via AccountService",
+                    UserId = account.UserId,
+                    AccountNumber = account.AccountNumber
                 }, token);
             }
             catch (Exception ex)

@@ -9,11 +9,13 @@ namespace SmartBank.Web.Controllers
     public class AccountController : Controller
     {
         private readonly HttpClient _client;
+        private readonly IConfiguration _configuration;
 
-        public AccountController(IHttpClientFactory factory)
+        public AccountController(IHttpClientFactory factory, IConfiguration configuration)
         {
+            _configuration = configuration;
             _client = factory.CreateClient();
-            _client.BaseAddress = new Uri("https://localhost:7002/");
+            _client.BaseAddress = new Uri(_configuration["GatewayBaseUrl"] ?? "https://localhost:7000/");
         }
 
         public async Task<IActionResult> Index()

@@ -6,11 +6,13 @@ using System.Text.Json;
 public class AuthController : Controller
 {
     private readonly HttpClient _client;
+    private readonly IConfiguration _configuration;
 
-    public AuthController(IHttpClientFactory factory)
+    public AuthController(IHttpClientFactory factory, IConfiguration configuration)
     {
+        _configuration = configuration;
         _client = factory.CreateClient();
-        _client.BaseAddress = new Uri("https://localhost:7001/");
+        _client.BaseAddress = new Uri(_configuration["GatewayBaseUrl"] ?? "https://localhost:7000/");
     }
 
     [HttpGet]

@@ -52,17 +52,30 @@ namespace SmartBank.AccountService.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var account = await _service.GetAllAccounts();
-            return Ok(account);
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized("User ID not found in token");
+
+            var accounts = await _service.GetAccountsByUserId(userId);
+            return Ok(accounts);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized("User ID not found in token");
+
             var account = await _service.GetAccount(id);
             
             if (account == null)
                 return NotFound($"Account with ID {id} not found");
+
+            if (account.UserId != userId)
+                return Forbid();
                 
             return Ok(account);
         }
@@ -91,6 +104,19 @@ namespace SmartBank.AccountService.Controllers
         // [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Deposit(TransactionDto dto)
         {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized("User ID not found in token");
+
+            var account = await _service.GetAccount(dto.AccountId);
+            
+            if (account == null)
+                return NotFound($"Account with ID {dto.AccountId} not found");
+
+            if (account.UserId != userId)
+                return Forbid();
+
             var token = Request.Headers["Authorization"]
                             .ToString()
                             .Replace("Bearer ", "");
@@ -111,6 +137,19 @@ namespace SmartBank.AccountService.Controllers
         // [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Withdraw(TransactionDto dto)
         {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized("User ID not found in token");
+
+            var account = await _service.GetAccount(dto.AccountId);
+            
+            if (account == null)
+                return NotFound($"Account with ID {dto.AccountId} not found");
+
+            if (account.UserId != userId)
+                return Forbid();
+
             // Extract JWT token from request header
             var authHeader = Request.Headers["Authorization"].ToString();
 

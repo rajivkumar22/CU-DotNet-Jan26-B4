@@ -34,6 +34,15 @@ namespace SmartBank.AccountService.Repositories
         }
 
         /// <summary>
+        /// BEGINNER NOTE: Get all accounts for a specific user (filtered by UserId)
+        /// This ensures users can only see their own accounts
+        /// </summary>
+        public async Task<List<Account>> GetAccountsByUserIdAsync(string userId)
+        {
+            return await _context.Accounts.Where(a => a.UserId == userId).ToListAsync();
+        }
+
+        /// <summary>
         /// BEGINNER NOTE: Add a new account to the database
         /// SaveChangesAsync() commits the changes to SQL Server database
         /// </summary>

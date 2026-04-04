@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Vagabond.Api/Vagabond.Api.csproj" />
+  <Project Path="Vagabond.Web/Vagabond.Web.csproj" />
+</Solution>

@@ -5,10 +5,7 @@ using SmartBank.TransactionService.Services;
 
 namespace SmartBank.TransactionService.Controllers
 {
-    /// <summary>
-    /// BEGINNER NOTE: This controller handles all transaction-related API requests
-    /// It receives deposit/withdrawal requests from the AccountService and saves them to the database
-    /// </summary>
+    
     [ApiController]
     [Route("api/transaction")] // FIXED: Changed from [controller] to "transaction" - this creates the route "api/transaction"
     public class TransactionController : ControllerBase

@@ -8,6 +8,7 @@ namespace SmartBank.AccountService.Services
         Task<Account> GetAccount(int id);
 
         Task<List<Account>> GetAllAccounts();
+        Task<List<Account>> GetAccountsByUserId(string userId);
         Task Deposit(int accountId, decimal amount, string token);
         Task Withdraw(int accountId, decimal amount, string token);
     }
