@@ -1,0 +1,6 @@
+@WebFluentAPI_HostAddress = http://localhost:5255
+
+GET {{WebFluentAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
