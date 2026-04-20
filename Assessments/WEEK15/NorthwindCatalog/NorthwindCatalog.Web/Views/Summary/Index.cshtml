@@ -1,0 +1,11 @@
+﻿@model List<CategorySummaryDto>
+
+@foreach (var item in Model)
+{
+    <h3>@item.CategoryName</h3>
+    <p>Total Products: @item.ProductCount</p>
+    <p>Average Price: @item.AvgPrice</p>
+    <p>Most Expensive: @item.MostExpensiveProduct</p>
+
+    <hr />
+}
