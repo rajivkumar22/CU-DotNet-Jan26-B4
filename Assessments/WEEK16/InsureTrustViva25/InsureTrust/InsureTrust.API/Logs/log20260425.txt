@@ -1,0 +1,390 @@
+2026-04-25 11:36:29.851 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 11:36:30.008 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 11:36:30.020 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 11:36:30.026 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 11:36:30.093 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-25 11:36:30.136 +05:30 [INF] Applying migration '20260425053603_RemoveUnusedModels'.
+2026-04-25 11:36:30.288 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Claims];
+2026-04-25 11:36:30.301 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Notifications];
+2026-04-25 11:36:30.310 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [SupportQueries];
+2026-04-25 11:36:30.328 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE [Users] SET [PasswordHash] = N'$2a$11$LzucetHmuNHhtasz49SRnOMeHF5utCbRVQ9MoG4ghpzRWCvebXAx.'
+WHERE [Id] = 1;
+SELECT @@ROWCOUNT;
+2026-04-25 11:36:30.337 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260425053603_RemoveUnusedModels', N'8.0.0');
+2026-04-25 11:36:30.418 +05:30 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-25 11:36:30.910 +05:30 [INF] Now listening on: https://localhost:7000
+2026-04-25 11:36:30.914 +05:30 [INF] Now listening on: http://localhost:5000
+2026-04-25 11:36:31.128 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-25 11:36:31.132 +05:30 [INF] Hosting environment: Development
+2026-04-25 11:36:31.136 +05:30 [INF] Content root path: C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API
+2026-04-25 11:36:33.478 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger - null null
+2026-04-25 11:36:33.809 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger - 301 null null 358.7282ms
+2026-04-25 11:36:33.825 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger/index.html - null null
+2026-04-25 11:36:34.056 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-25 11:36:34.056 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui.css - null null
+2026-04-25 11:36:34.056 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger/swagger-ui-bundle.js - null null
+2026-04-25 11:36:34.063 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger/index.html - 200 null text/html;charset=utf-8 239.0432ms
+2026-04-25 11:36:34.068 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-25 11:36:34.161 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 93.7944ms
+2026-04-25 11:36:34.175 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-04-25 11:36:34.175 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-04-25 11:36:34.186 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui.css - 200 144929 text/css 130.4464ms
+2026-04-25 11:36:34.195 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/_vs/browserLink - null null
+2026-04-25 11:36:34.186 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 130.3359ms
+2026-04-25 11:36:34.214 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-04-25 11:36:34.224 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 167.713ms
+2026-04-25 11:36:34.307 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 112.1321ms
+2026-04-25 11:36:34.421 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - null null
+2026-04-25 11:36:34.440 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.9036ms
+2026-04-25 11:36:49.833 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7000/api/Payment/initiate - application/json 67
+2026-04-25 11:36:49.863 +05:30 [INF] CORS policy execution failed.
+2026-04-25 11:36:49.869 +05:30 [INF] Request origin https://localhost:7000 does not have permission to access the resource.
+2026-04-25 11:36:50.034 +05:30 [INF] Executing endpoint 'InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API)'
+2026-04-25 11:36:50.115 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(InsureTrust.API.DTOs.Payment.InitiatePaymentDto) on controller InsureTrust.API.Controllers.PaymentController (InsureTrust.API).
+2026-04-25 11:36:51.522 +05:30 [INF] Executed DbCommand (143ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AdminRemarks], [u].[DynamicFieldsJson], [u].[ExpiryDate], [u].[PackageAmount], [u].[PolicyNumber], [u].[PolicyTypeId], [u].[PurchaseDate], [u].[Status], [u].[Tenure], [u].[UserId], [p].[Id], [p].[BaseMonthlyPremium], [p].[Category], [p].[CoverageDetails], [p].[CreatedAt], [p].[Description], [p].[Icon], [p].[IsActive], [p].[MaxTenureMonths], [p].[MinTenureMonths], [p].[Name], [u0].[Id], [u0].[Balance], [u0].[CreatedAt], [u0].[Email], [u0].[KycDocumentPath], [u0].[KycStatus], [u0].[Name], [u0].[PanCard], [u0].[PasswordHash], [u0].[PhoneNo], [u0].[Role], [u0].[UserNumber]
+FROM [UserPolicies] AS [u]
+INNER JOIN [PolicyTypes] AS [p] ON [u].[PolicyTypeId] = [p].[Id]
+INNER JOIN [Users] AS [u0] ON [u].[UserId] = [u0].[Id]
+WHERE [u].[Id] = @__id_0
+2026-04-25 11:36:52.258 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [PaymentDate], [PaymentMethod], [PaymentNumber], [Status], [UserId], [UserPolicyId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-04-25 11:36:52.363 +05:30 [INF] Executing OkObjectResult, writing value of type 'InsureTrust.API.Helpers.ApiResponse`1[[InsureTrust.API.DTOs.Payment.PaymentDto, InsureTrust.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-25 11:36:52.420 +05:30 [INF] Executed action InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API) in 2282.3628ms
+2026-04-25 11:36:52.427 +05:30 [INF] Executed endpoint 'InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API)'
+2026-04-25 11:36:52.442 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7000/api/Payment/initiate - 200 null application/json; charset=utf-8 2608.7265ms
+2026-04-25 11:39:43.411 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7000/api/auth/login - application/json; charset=utf-8 46
+2026-04-25 11:39:43.528 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7000/api/auth/login - 404 0 null 162.3944ms
+2026-04-25 11:39:43.548 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7000/api/auth/login, Response status code: 404
+2026-04-25 11:39:47.524 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7000/api/auth/login - application/json; charset=utf-8 46
+2026-04-25 11:39:47.556 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7000/api/auth/login - 404 0 null 33.0944ms
+2026-04-25 11:39:47.568 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7000/api/auth/login, Response status code: 404
+2026-04-25 11:42:13.416 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 11:42:13.522 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 11:42:13.525 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 11:42:13.527 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 11:42:13.610 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-25 11:42:13.626 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-25 11:42:13.645 +05:30 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-25 11:42:13.780 +05:30 [INF] Now listening on: https://localhost:7000
+2026-04-25 11:42:13.780 +05:30 [INF] Now listening on: http://localhost:5000
+2026-04-25 11:42:13.783 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-25 11:42:13.783 +05:30 [INF] Hosting environment: Development
+2026-04-25 11:42:13.784 +05:30 [INF] Content root path: C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API
+2026-04-25 11:49:54.927 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7000/api/auth/login - application/json; charset=utf-8 46
+2026-04-25 11:49:55.577 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7000/api/auth/login - 404 0 null 666.4789ms
+2026-04-25 11:49:55.613 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7000/api/auth/login, Response status code: 404
+2026-04-25 11:52:40.291 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 11:52:40.432 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 11:52:40.435 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 11:52:40.437 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 11:52:40.540 +05:30 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-25 11:52:40.570 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-25 11:52:40.615 +05:30 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-25 11:52:40.869 +05:30 [INF] Now listening on: https://localhost:7000
+2026-04-25 11:52:40.870 +05:30 [INF] Now listening on: http://localhost:5000
+2026-04-25 11:52:40.874 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-25 11:52:40.877 +05:30 [INF] Hosting environment: Development
+2026-04-25 11:52:40.877 +05:30 [INF] Content root path: C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API
+2026-04-25 11:54:23.854 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7000/api/payment/history - null null
+2026-04-25 11:54:24.290 +05:30 [INF] Executing endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 11:54:24.387 +05:30 [INF] Route matched with {action = "History", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] History() on controller InsureTrust.API.Controllers.PaymentController (InsureTrust.API).
+2026-04-25 11:54:27.846 +05:30 [INF] Executed DbCommand (1,435ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Amount], [p].[PaymentDate], [p].[PaymentMethod], [p].[PaymentNumber], [p].[Status], [p].[UserId], [p].[UserPolicyId], [u].[Id], [u].[AdminRemarks], [u].[DynamicFieldsJson], [u].[ExpiryDate], [u].[PackageAmount], [u].[PolicyNumber], [u].[PolicyTypeId], [u].[PurchaseDate], [u].[Status], [u].[Tenure], [u].[UserId], [p0].[Id], [p0].[BaseMonthlyPremium], [p0].[Category], [p0].[CoverageDetails], [p0].[CreatedAt], [p0].[Description], [p0].[Icon], [p0].[IsActive], [p0].[MaxTenureMonths], [p0].[MinTenureMonths], [p0].[Name]
+FROM [Payments] AS [p]
+INNER JOIN [UserPolicies] AS [u] ON [p].[UserPolicyId] = [u].[Id]
+INNER JOIN [PolicyTypes] AS [p0] ON [u].[PolicyTypeId] = [p0].[Id]
+WHERE [p].[UserId] = @__userId_0
+ORDER BY [p].[PaymentDate] DESC
+2026-04-25 11:54:28.172 +05:30 [INF] Executing OkObjectResult, writing value of type 'InsureTrust.API.Helpers.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[InsureTrust.API.DTOs.Payment.PaymentDto, InsureTrust.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-25 11:54:28.497 +05:30 [INF] Executed action InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API) in 4091.7947ms
+2026-04-25 11:54:28.502 +05:30 [INF] Executed endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 11:54:28.554 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7000/api/payment/history - 200 null application/json; charset=utf-8 4721.3574ms
+2026-04-25 11:55:31.940 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Payment/Initiate - null null
+2026-04-25 11:55:32.029 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Payment/Initiate - 307 0 null 96.0277ms
+2026-04-25 11:55:32.175 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/Payment/Initiate - null null
+2026-04-25 11:55:32.209 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/Payment/Initiate - 404 0 null 34.1436ms
+2026-04-25 11:55:32.211 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7000/Payment/Initiate, Response status code: 404
+2026-04-25 11:57:13.209 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7000/api/payment/history - null null
+2026-04-25 11:57:13.396 +05:30 [INF] Executing endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 11:57:13.434 +05:30 [INF] Route matched with {action = "History", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] History() on controller InsureTrust.API.Controllers.PaymentController (InsureTrust.API).
+2026-04-25 11:57:16.878 +05:30 [INF] Executed DbCommand (2,649ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Amount], [p].[PaymentDate], [p].[PaymentMethod], [p].[PaymentNumber], [p].[Status], [p].[UserId], [p].[UserPolicyId], [u].[Id], [u].[AdminRemarks], [u].[DynamicFieldsJson], [u].[ExpiryDate], [u].[PackageAmount], [u].[PolicyNumber], [u].[PolicyTypeId], [u].[PurchaseDate], [u].[Status], [u].[Tenure], [u].[UserId], [p0].[Id], [p0].[BaseMonthlyPremium], [p0].[Category], [p0].[CoverageDetails], [p0].[CreatedAt], [p0].[Description], [p0].[Icon], [p0].[IsActive], [p0].[MaxTenureMonths], [p0].[MinTenureMonths], [p0].[Name]
+FROM [Payments] AS [p]
+INNER JOIN [UserPolicies] AS [u] ON [p].[UserPolicyId] = [u].[Id]
+INNER JOIN [PolicyTypes] AS [p0] ON [u].[PolicyTypeId] = [p0].[Id]
+WHERE [p].[UserId] = @__userId_0
+ORDER BY [p].[PaymentDate] DESC
+2026-04-25 11:57:17.030 +05:30 [INF] Executing OkObjectResult, writing value of type 'InsureTrust.API.Helpers.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[InsureTrust.API.DTOs.Payment.PaymentDto, InsureTrust.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-25 11:57:17.089 +05:30 [INF] Executed action InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API) in 3653.25ms
+2026-04-25 11:57:17.092 +05:30 [INF] Executed endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 11:57:17.103 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7000/api/payment/history - 200 null application/json; charset=utf-8 3905.4484ms
+2026-04-25 11:57:31.902 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7000/api/payment/history - null null
+2026-04-25 11:57:31.906 +05:30 [INF] Executing endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 11:57:31.907 +05:30 [INF] Route matched with {action = "History", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] History() on controller InsureTrust.API.Controllers.PaymentController (InsureTrust.API).
+2026-04-25 11:57:31.989 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Amount], [p].[PaymentDate], [p].[PaymentMethod], [p].[PaymentNumber], [p].[Status], [p].[UserId], [p].[UserPolicyId], [u].[Id], [u].[AdminRemarks], [u].[DynamicFieldsJson], [u].[ExpiryDate], [u].[PackageAmount], [u].[PolicyNumber], [u].[PolicyTypeId], [u].[PurchaseDate], [u].[Status], [u].[Tenure], [u].[UserId], [p0].[Id], [p0].[BaseMonthlyPremium], [p0].[Category], [p0].[CoverageDetails], [p0].[CreatedAt], [p0].[Description], [p0].[Icon], [p0].[IsActive], [p0].[MaxTenureMonths], [p0].[MinTenureMonths], [p0].[Name]
+FROM [Payments] AS [p]
+INNER JOIN [UserPolicies] AS [u] ON [p].[UserPolicyId] = [u].[Id]
+INNER JOIN [PolicyTypes] AS [p0] ON [u].[PolicyTypeId] = [p0].[Id]
+WHERE [p].[UserId] = @__userId_0
+ORDER BY [p].[PaymentDate] DESC
+2026-04-25 11:57:31.998 +05:30 [INF] Executing OkObjectResult, writing value of type 'InsureTrust.API.Helpers.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[InsureTrust.API.DTOs.Payment.PaymentDto, InsureTrust.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-25 11:57:32.001 +05:30 [INF] Executed action InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API) in 93.5387ms
+2026-04-25 11:57:32.001 +05:30 [INF] Executed endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 11:57:32.005 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7000/api/payment/history - 200 null application/json; charset=utf-8 103.663ms
+2026-04-25 12:01:14.603 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7000/api/payment/initiate - application/json; charset=utf-8 60
+2026-04-25 12:01:14.707 +05:30 [INF] Executing endpoint 'InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API)'
+2026-04-25 12:01:15.048 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(InsureTrust.API.DTOs.Payment.InitiatePaymentDto) on controller InsureTrust.API.Controllers.PaymentController (InsureTrust.API).
+2026-04-25 12:01:16.919 +05:30 [INF] Executed DbCommand (767ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AdminRemarks], [u].[DynamicFieldsJson], [u].[ExpiryDate], [u].[PackageAmount], [u].[PolicyNumber], [u].[PolicyTypeId], [u].[PurchaseDate], [u].[Status], [u].[Tenure], [u].[UserId], [p].[Id], [p].[BaseMonthlyPremium], [p].[Category], [p].[CoverageDetails], [p].[CreatedAt], [p].[Description], [p].[Icon], [p].[IsActive], [p].[MaxTenureMonths], [p].[MinTenureMonths], [p].[Name], [u0].[Id], [u0].[Balance], [u0].[CreatedAt], [u0].[Email], [u0].[KycDocumentPath], [u0].[KycStatus], [u0].[Name], [u0].[PanCard], [u0].[PasswordHash], [u0].[PhoneNo], [u0].[Role], [u0].[UserNumber]
+FROM [UserPolicies] AS [u]
+INNER JOIN [PolicyTypes] AS [p] ON [u].[PolicyTypeId] = [p].[Id]
+INNER JOIN [Users] AS [u0] ON [u].[UserId] = [u0].[Id]
+WHERE [u].[Id] = @__id_0
+2026-04-25 12:01:18.206 +05:30 [INF] Executed DbCommand (469ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [PaymentDate], [PaymentMethod], [PaymentNumber], [Status], [UserId], [UserPolicyId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-04-25 12:01:18.453 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'InsureTrust.API.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Payments' with unique index 'IX_Payments_PaymentNumber'. The duplicate key value is ().
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:14dc10cb-4f60-41e3-bcf4-1aed507038a4
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Payments' with unique index 'IX_Payments_PaymentNumber'. The duplicate key value is ().
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:14dc10cb-4f60-41e3-bcf4-1aed507038a4
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-04-25 12:01:18.485 +05:30 [INF] Executed action InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API) in 3434.8506ms
+2026-04-25 12:01:18.488 +05:30 [INF] Executed endpoint 'InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API)'
+2026-04-25 12:01:18.501 +05:30 [ERR] Unhandled exception: An error occurred while saving the entity changes. See the inner exception for details.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Payments' with unique index 'IX_Payments_PaymentNumber'. The duplicate key value is ().
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:14dc10cb-4f60-41e3-bcf4-1aed507038a4
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at InsureTrust.API.Repositories.PaymentRepository.AddAsync(Payment payment) in C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API\Repositories\PaymentRepository.cs:line 13
+   at InsureTrust.API.Services.PaymentService.InitiateAsync(InitiatePaymentDto dto, Int32 userId) in C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API\Services\PaymentService.cs:line 31
+   at InsureTrust.API.Controllers.PaymentController.Initiate(InitiatePaymentDto dto) in C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API\Controllers\PaymentController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at InsureTrust.API.Exceptions.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API\Exceptions\Exceptions.cs:line 40
+2026-04-25 12:01:18.732 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7000/api/payment/initiate - 500 null application/json 4138.8309ms
+2026-04-25 12:03:31.830 +05:30 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 12:03:31.987 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 12:03:31.996 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 12:03:31.998 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 12:03:32.114 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-25 12:03:32.146 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-25 12:03:32.184 +05:30 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-25 12:03:32.427 +05:30 [INF] Now listening on: https://localhost:7000
+2026-04-25 12:03:32.428 +05:30 [INF] Now listening on: http://localhost:5000
+2026-04-25 12:03:32.432 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-25 12:03:32.433 +05:30 [INF] Hosting environment: Development
+2026-04-25 12:03:32.433 +05:30 [INF] Content root path: C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API
+2026-04-25 12:08:18.600 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7000/api/payment/initiate - application/json; charset=utf-8 59
+2026-04-25 12:08:18.854 +05:30 [INF] Executing endpoint 'InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API)'
+2026-04-25 12:08:18.948 +05:30 [INF] Route matched with {action = "Initiate", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Initiate(InsureTrust.API.DTOs.Payment.InitiatePaymentDto) on controller InsureTrust.API.Controllers.PaymentController (InsureTrust.API).
+2026-04-25 12:08:19.264 +05:30 [INF] Executing OkObjectResult, writing value of type 'InsureTrust.API.Helpers.ApiResponse`1[[InsureTrust.API.DTOs.Payment.PaymentDto, InsureTrust.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-25 12:08:19.340 +05:30 [INF] Executed action InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API) in 384.1462ms
+2026-04-25 12:08:19.342 +05:30 [INF] Executed endpoint 'InsureTrust.API.Controllers.PaymentController.Initiate (InsureTrust.API)'
+2026-04-25 12:08:19.361 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7000/api/payment/initiate - 200 null application/json; charset=utf-8 772.9589ms
+2026-04-25 12:08:19.510 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7000/api/payment/history - null null
+2026-04-25 12:08:19.531 +05:30 [INF] Executing endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 12:08:19.540 +05:30 [INF] Route matched with {action = "History", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] History() on controller InsureTrust.API.Controllers.PaymentController (InsureTrust.API).
+2026-04-25 12:08:20.661 +05:30 [INF] Executed DbCommand (241ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Amount], [p].[PaymentDate], [p].[PaymentMethod], [p].[PaymentNumber], [p].[Status], [p].[UserId], [p].[UserPolicyId], [u].[Id], [u].[AdminRemarks], [u].[DynamicFieldsJson], [u].[ExpiryDate], [u].[PackageAmount], [u].[PolicyNumber], [u].[PolicyTypeId], [u].[PurchaseDate], [u].[Status], [u].[Tenure], [u].[UserId], [p0].[Id], [p0].[BaseMonthlyPremium], [p0].[Category], [p0].[CoverageDetails], [p0].[CreatedAt], [p0].[Description], [p0].[Icon], [p0].[IsActive], [p0].[MaxTenureMonths], [p0].[MinTenureMonths], [p0].[Name]
+FROM [Payments] AS [p]
+INNER JOIN [UserPolicies] AS [u] ON [p].[UserPolicyId] = [u].[Id]
+INNER JOIN [PolicyTypes] AS [p0] ON [u].[PolicyTypeId] = [p0].[Id]
+WHERE [p].[UserId] = @__userId_0
+ORDER BY [p].[PaymentDate] DESC
+2026-04-25 12:08:20.858 +05:30 [INF] Executing OkObjectResult, writing value of type 'InsureTrust.API.Helpers.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[InsureTrust.API.DTOs.Payment.PaymentDto, InsureTrust.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-25 12:08:20.870 +05:30 [INF] Executed action InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API) in 1328.5883ms
+2026-04-25 12:08:20.871 +05:30 [INF] Executed endpoint 'InsureTrust.API.Controllers.PaymentController.History (InsureTrust.API)'
+2026-04-25 12:08:20.881 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7000/api/payment/history - 200 null application/json; charset=utf-8 1370.4999ms
+2026-04-25 12:17:46.296 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 12:17:46.485 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [InsureTrustDb] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+END;
+2026-04-25 12:17:46.529 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP DATABASE [InsureTrustDb];
+2026-04-25 12:21:11.211 +05:30 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [InsureTrustDb];
+2026-04-25 12:21:11.567 +05:30 [INF] Executed DbCommand (186ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [InsureTrustDb] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-04-25 12:21:11.649 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 12:21:11.846 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-04-25 12:21:11.854 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-25 12:21:11.907 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-25 12:21:11.970 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-25 12:21:12.009 +05:30 [INF] Applying migration '20260425064709_InitialCreate'.
+2026-04-25 12:21:12.107 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Payments] (
+    [Id] int NOT NULL IDENTITY,
+    [PaymentNumber] nvarchar(450) NOT NULL,
+    [UserId] int NOT NULL,
+    [UserPolicyId] int NOT NULL,
+    [Amount] decimal(18,2) NOT NULL,
+    [PaymentDate] datetime2 NOT NULL,
+    [PaymentMethod] nvarchar(max) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Payments] PRIMARY KEY ([Id])
+);
+2026-04-25 12:21:12.130 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Payments_PaymentNumber] ON [Payments] ([PaymentNumber]);
+2026-04-25 12:21:12.157 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260425064709_InitialCreate', N'8.0.0');
+2026-04-25 12:21:12.234 +05:30 [INF] User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-25 12:21:12.800 +05:30 [INF] Now listening on: https://localhost:7000
+2026-04-25 12:21:12.805 +05:30 [INF] Now listening on: http://localhost:5000
+2026-04-25 12:21:13.008 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-25 12:21:13.012 +05:30 [INF] Hosting environment: Development
+2026-04-25 12:21:13.016 +05:30 [INF] Content root path: C:\Users\hp\OneDrive\Documents\InsureTrustViva25\InsureTrust\InsureTrust.API
+2026-04-25 12:21:14.643 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger/index.html - null null
+2026-04-25 12:21:15.083 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger/index.html - 200 null text/html;charset=utf-8 472.674ms
+2026-04-25 12:21:15.094 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-25 12:21:15.108 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 14.0021ms
+2026-04-25 12:21:15.117 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/_vs/browserLink - null null
+2026-04-25 12:21:15.225 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 108.4025ms
+2026-04-25 12:21:15.390 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - null null
+2026-04-25 12:21:15.412 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.6888ms

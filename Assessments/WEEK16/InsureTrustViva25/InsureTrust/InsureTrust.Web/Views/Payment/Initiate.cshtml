@@ -1,0 +1,55 @@
+@* ===== MAKE PAYMENT ===== *@
+@model InsureTrust.Web.Models.InitiatePaymentViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Make Payment";
+}
+
+<div class="page-header">
+    <h1>Make Payment</h1>
+    <p>Pay for your policy premiums or renewals securely</p>
+</div>
+
+<div class="card" style="max-width:600px;margin:0 auto;">
+    <form asp-action="Initiate" method="post">
+        
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert" style="background:#fee2e2;color:#991b1b;padding:1rem;border-radius:var(--radius);margin-bottom:1rem;">
+                <div asp-validation-summary="All"></div>
+            </div>
+        }
+
+        <div class="form-group">
+            <label asp-for="UserPolicyId">Policy ID</label>
+            <input asp-for="UserPolicyId" type="number" class="form-control" placeholder="Enter Policy ID" required />
+            <span asp-validation-for="UserPolicyId" class="text-danger" style="color:red;font-size:0.875rem;"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Amount">Payment Amount (₹)</label>
+            <input asp-for="Amount" type="number" step="0.01" class="form-control" placeholder="0.00" required />
+            <span asp-validation-for="Amount" class="text-danger" style="color:red;font-size:0.875rem;"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PaymentMethod">Payment Method</label>
+            <select asp-for="PaymentMethod" class="form-control" required>
+                <option value="">-- Select Payment Method --</option>
+                <option value="CreditCard">Credit Card</option>
+                <option value="DebitCard">Debit Card</option>
+                <option value="UPI">UPI</option>
+                <option value="NetBanking">Net Banking</option>
+            </select>
+            <span asp-validation-for="PaymentMethod" class="text-danger" style="color:red;font-size:0.875rem;"></span>
+        </div>
+
+        <div style="margin-top:2rem;">
+            <button type="submit" class="btn btn-primary" style="width:100%;font-size:1.1rem;padding:0.75rem;">Pay Now</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

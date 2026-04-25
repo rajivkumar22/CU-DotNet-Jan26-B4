@@ -1,0 +1,51 @@
+@* ===== PAYMENT INDEX ===== *@
+@model List<InsureTrust.Web.Models.PaymentViewModel>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Payment History";
+}
+
+<div class="page-header">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><h1>Payment History</h1><p>View all your transaction history</p></div>
+        <a href="@Url.Action("Initiate")" class="btn btn-primary">+ Make Payment</a>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="card" style="text-align:center;padding:3rem">
+        <div style="font-size:48px;margin-bottom:1rem">💳</div>
+        <div style="font-size:18px;font-weight:600;margin-bottom:8px">No payments found</div>
+        <div style="color:var(--gray-500);margin-bottom:1.5rem">You haven't made any payments yet.</div>
+        <a href="@Url.Action("Initiate")" class="btn btn-primary">Make a Payment</a>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment #</th><th>Policy #</th><th>Amount</th><th>Method</th>
+                        <th>Date</th><th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var p in Model)
+                    {
+                        <tr>
+                            <td><strong>@p.PaymentNumber</strong></td>
+                            <td>@p.PolicyNumber</td>
+                            <td>₹@p.Amount.ToString("N2")</td>
+                            <td>@p.PaymentMethod</td>
+                            <td>@p.PaymentDate.ToString("dd MMM yyyy HH:mm")</td>
+                            <td><span class="badge badge-@p.Status.ToLower()">@p.Status</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

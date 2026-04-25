@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — Insure Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+<nav class="navbar">
+    <a class="nav-brand" href="@Url.Action("Initiate", "Payment")">
+        <span class="brand-shield">⬡</span> Insure Trust
+    </a>
+    <div class="nav-links">
+        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Initiate" ? "active" : "")" href="@Url.Action("Initiate","Payment")">Make Payment</a>
+        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" href="@Url.Action("Index","Payment")">Payment History</a>
+    </div>
+    <div class="nav-right">
+        <!-- Demo version, no auth needed -->
+    </div>
+</nav>
+
+@if (TempData["Success"] != null)
+{
+    <div class="flash flash-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="flash flash-error">@TempData["Error"]</div>
+}
+
+<main class="main-content">
+    @RenderBody()
+</main>
+
+<footer class="site-footer">
+    <span>© 2026 Insure Trust. All rights reserved.</span>
+    <span>Secured by 256-bit encryption</span>
+</footer>
+
+<script src="~/js/site.js"></script>
+@RenderSection("Scripts", required: false)
+</body>
+</html>
